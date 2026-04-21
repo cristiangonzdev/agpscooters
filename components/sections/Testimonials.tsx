@@ -58,7 +58,7 @@ export function Testimonials({ lang }: Props) {
             const photo = PHOTOS[i] ?? PHOTOS[0];
             return (
               <motion.figure
-                key={item.name + i}
+                key={i}
                 initial={reduce ? false : { opacity: 0, y: 30 }}
                 whileInView={reduce ? undefined : { opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
@@ -103,14 +103,8 @@ export function Testimonials({ lang }: Props) {
                     <span aria-hidden="true" className="text-[#E8C87C]">&rdquo;</span>
                   </blockquote>
 
-                  <div className="mt-auto flex items-center justify-between border-t border-[#D4AF37]/15 pt-4">
-                    <div>
-                      <div className="font-display text-base leading-tight text-ink-primary">
-                        {item.name}
-                      </div>
-                      <div className="text-xs text-ink-muted">{item.location}</div>
-                    </div>
-                    <span className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#E8C87C]">
+                  <div className="mt-auto flex items-center justify-end border-t border-[#D4AF37]/15 pt-4">
+                    <span className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#E8C87C]">
                       {item.trip}
                     </span>
                   </div>

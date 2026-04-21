@@ -15,8 +15,6 @@ export function isLang(value: string): value is Lang {
 }
 
 type Testimonial = {
-  name: string;
-  location: string;
   quote: string;
   trip: string;
 };
@@ -166,18 +164,14 @@ export const DICT: Record<Lang, Dict> = {
       subtitle: "Cinco estrellas Google y decenas de reseñas. Estas son algunas de las nuestras favoritas.",
       items: [
         {
-          name: "Familia Rodríguez",
-          location: "Madrid · Viaje de aniversario",
           quote:
             "Queríamos celebrar los 50 años de casados en Lanzarote y la movilidad de mi marido nos frenaba. AGP nos entregó el scooter doble en el hotel de Costa Teguise y pudimos hacer el paseo entero. Una atención impecable de principio a fin.",
           trip: "8 días · AGP Doble",
         },
         {
-          name: "Familia Martín",
-          location: "Valencia · Escapada familiar",
           quote:
-            "Mi padre tiene 78 años y no salía apenas desde la operación. Pedro vino al apartamento, le explicó todo con calma y hasta hizo una vuelta con él para ver que iba seguro. Tres semanas después papá nos pide que volvamos. Eso lo dice todo.",
-          trip: "10 días · AGP Premium XL",
+            "Llevamos años escapando del frío inglés en Lanzarote y este invierno, por fin, mi marido ha vuelto a pasear como antes. Nos trajeron el Premium XL al apartamento, con una sonrisa y en un inglés perfecto. Hicimos el paseo de Puerto del Carmen entero, parando donde nos apetecía. Sin duda, el mejor regalo del viaje.",
+          trip: "14 días · AGP Premium XL",
         },
       ],
     },
@@ -224,7 +218,7 @@ export const DICT: Record<Lang, Dict> = {
       designedBy: "Designed by",
       designerName: "Logika Digital",
       designerCta: "(pincha para visitar web)",
-      designerUrl: "https://logikadigital.com",
+      designerUrl: "https://logikateam.com",
     },
     aria: {
       openWhatsApp: "Abrir WhatsApp",
@@ -299,18 +293,14 @@ export const DICT: Record<Lang, Dict> = {
       subtitle: "Five-star Google reviews and dozens of kind words. Here are some of our favourites.",
       items: [
         {
-          name: "The Rodríguez family",
-          location: "Madrid · Anniversary trip",
           quote:
             "We wanted to celebrate 50 years of marriage in Lanzarote, and my husband's mobility was holding us back. AGP delivered the double scooter to our Costa Teguise hotel and we finally did the full promenade together. Impeccable attention from start to finish.",
           trip: "8 days · AGP Doble",
         },
         {
-          name: "The Martín family",
-          location: "Valencia · Family getaway",
           quote:
-            "My father is 78 and had barely left the house since his operation. Pedro came to the apartment, walked him through everything calmly and even did a short loop with him to check he felt safe. Three weeks later, dad's the one asking when we're going back. That says everything.",
-          trip: "10 days · AGP Premium XL",
+            "We've been escaping the British winters in Lanzarote for years, and this season my husband finally got his old strolls back. They brought the Premium XL to our apartment with a smile and perfect English. We did the full Puerto del Carmen promenade, stopping wherever we fancied. Easily the best gift of the trip.",
+          trip: "14 days · AGP Premium XL",
         },
       ],
     },
@@ -357,7 +347,7 @@ export const DICT: Record<Lang, Dict> = {
       designedBy: "Designed by",
       designerName: "Logika Digital",
       designerCta: "(click to visit site)",
-      designerUrl: "https://logikadigital.com",
+      designerUrl: "https://logikateam.com",
     },
     aria: {
       openWhatsApp: "Open WhatsApp",
@@ -432,18 +422,14 @@ export const DICT: Record<Lang, Dict> = {
       subtitle: "Fünf-Sterne-Bewertungen auf Google und viele herzliche Worte. Hier einige unserer Lieblinge.",
       items: [
         {
-          name: "Familie Rodríguez",
-          location: "Madrid · Jubiläumsreise",
           quote:
             "Wir wollten 50 Ehejahre auf Lanzarote feiern, aber die Mobilität meines Mannes hat uns ausgebremst. AGP hat den Doppelscooter ins Hotel in Costa Teguise geliefert und wir konnten endlich die gesamte Promenade zusammen machen. Tadellos von Anfang bis Ende.",
           trip: "8 Tage · AGP Doble",
         },
         {
-          name: "Familie Martín",
-          location: "Valencia · Familienurlaub",
           quote:
-            "Mein Vater ist 78 und hatte das Haus seit seiner Operation kaum verlassen. Pedro kam zur Wohnung, hat ihm alles in Ruhe erklärt und sogar eine kurze Runde mit ihm gedreht, damit er sich sicher fühlt. Drei Wochen später fragt Papa, wann wir wiederkommen. Das sagt alles.",
-          trip: "10 Tage · AGP Premium XL",
+            "Wir fliehen seit Jahren im Winter aus England nach Lanzarote, und diese Saison konnte mein Mann endlich wieder spazieren wie früher. Der Premium XL wurde mit einem Lächeln und in perfektem Englisch ans Apartment gebracht. Wir haben die ganze Promenade von Puerto del Carmen gemacht und angehalten, wo wir wollten. Das schönste Geschenk der Reise.",
+          trip: "14 Tage · AGP Premium XL",
         },
       ],
     },
@@ -490,7 +476,7 @@ export const DICT: Record<Lang, Dict> = {
       designedBy: "Designed by",
       designerName: "Logika Digital",
       designerCta: "(zum Besuch der Website klicken)",
-      designerUrl: "https://logikadigital.com",
+      designerUrl: "https://logikateam.com",
     },
     aria: {
       openWhatsApp: "WhatsApp öffnen",
@@ -565,18 +551,14 @@ export const DICT: Record<Lang, Dict> = {
       subtitle: "Cinq étoiles sur Google et des dizaines de mots gentils. Voici quelques-uns de nos préférés.",
       items: [
         {
-          name: "Famille Rodríguez",
-          location: "Madrid · Voyage anniversaire",
           quote:
             "Nous voulions fêter nos 50 ans de mariage à Lanzarote, mais la mobilité de mon mari nous freinait. AGP a livré le scooter double à notre hôtel de Costa Teguise et nous avons enfin pu faire toute la promenade ensemble. Une attention parfaite de bout en bout.",
           trip: "8 jours · AGP Doble",
         },
         {
-          name: "Famille Martín",
-          location: "Valence · Escapade en famille",
           quote:
-            "Mon père a 78 ans et sortait à peine depuis son opération. Pedro est venu à l'appartement, lui a tout expliqué calmement et a même fait un petit tour avec lui pour vérifier qu'il se sentait en sécurité. Trois semaines plus tard, c'est papa qui nous demande quand on y retourne. Tout est dit.",
-          trip: "10 jours · AGP Premium XL",
+            "Cela fait des années que nous fuyons l'hiver anglais à Lanzarote, et cette saison mon mari a enfin retrouvé ses balades d'autrefois. Ils nous ont apporté le Premium XL à l'appartement, avec le sourire et un anglais parfait. Nous avons fait toute la promenade de Puerto del Carmen, en nous arrêtant où bon nous semblait. Le plus beau cadeau du voyage.",
+          trip: "14 jours · AGP Premium XL",
         },
       ],
     },
@@ -623,7 +605,7 @@ export const DICT: Record<Lang, Dict> = {
       designedBy: "Designed by",
       designerName: "Logika Digital",
       designerCta: "(cliquez pour visiter le site)",
-      designerUrl: "https://logikadigital.com",
+      designerUrl: "https://logikateam.com",
     },
     aria: {
       openWhatsApp: "Ouvrir WhatsApp",
