@@ -1,11 +1,11 @@
 "use client";
 
-import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 import { Check, Gauge, Route, User, Weight } from "lucide-react";
 import type { Scooter, Lang } from "@/lib/scooters";
 import { getDict } from "@/lib/i18n";
 import { WhatsAppButton } from "./WhatsAppButton";
+import { ChromaKeyedImage } from "./ChromaKeyedImage";
 
 type Props = {
   scooter: Scooter;
@@ -56,39 +56,27 @@ export function VehicleCard({ scooter, lang, index }: Props) {
       whileHover={reduce ? undefined : { y: -6 }}
       className="gold-border-shimmer group relative flex flex-col overflow-hidden rounded-2xl bg-[#141416] border border-[#D4AF37]/15 transition-colors duration-300 hover:border-[#D4AF37]/40"
     >
-      <div
-        className="relative aspect-[4/3] overflow-hidden"
-        style={{
-          background:
-            "radial-gradient(ellipse 75% 65% at 50% 58%, #1C1C1F 0%, #141416 55%, #0A0A0B 100%)",
-        }}
-      >
-        <div className="absolute inset-0 flex items-center justify-center transition-transform duration-[900ms] ease-out group-hover:scale-[1.06]">
-          <Image
-            src={scooter.image}
-            alt={`${scooter.name} — ${scooter.tagline[lang]}`}
-            fill
-            sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 100vw"
-            className="object-cover"
-            style={{ filter: "url(#agp-key-white)" }}
-          />
-        </div>
-
+      <div className="relative aspect-[4/3] overflow-hidden bg-[#0A0A0B]">
         <div
           aria-hidden="true"
           className="pointer-events-none absolute inset-0"
           style={{
             background:
-              "radial-gradient(ellipse 80% 70% at 50% 52%, rgba(212,175,55,0.05) 0%, transparent 50%, rgba(10,10,11,0.75) 100%)",
+              "radial-gradient(ellipse 70% 55% at 50% 55%, rgba(212,175,55,0.07) 0%, transparent 70%)",
           }}
         />
+
+        <div className="absolute inset-0 flex items-center justify-center transition-transform duration-[900ms] ease-out group-hover:scale-[1.06]">
+          <ChromaKeyedImage
+            src={scooter.image}
+            alt={`${scooter.name} — ${scooter.tagline[lang]}`}
+            className="h-full w-full object-cover"
+          />
+        </div>
+
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#141416] via-[#141416]/80 to-transparent"
-        />
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-[#141416]/70 to-transparent"
+          className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#141416] to-transparent"
         />
 
         <div className="absolute right-4 top-4 z-10">
