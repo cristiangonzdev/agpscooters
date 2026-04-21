@@ -58,7 +58,7 @@ export const SCOOTERS: Scooter[] = [
     max_weight_kg: 220,
     price_from_eur_day: 55,
     price_crossed_eur_day: 70,
-    image: "/images/scooter-doble.jpg",
+    image: "/images/scooter-doble.png",
     whatsapp_message: {
       es: "Hola, me interesa alquilar el AGP Doble. ¿Disponibilidad y precio para mis fechas en Lanzarote?",
       en: "Hi, I'd like to rent the AGP Doble. Could you confirm availability and price for my dates in Lanzarote?",
@@ -82,7 +82,7 @@ export const SCOOTERS: Scooter[] = [
     max_weight_kg: 250,
     price_from_eur_day: 75,
     price_crossed_eur_day: 95,
-    image: "/images/scooter-premium.jpg",
+    image: "/images/scooter-premium.png",
     whatsapp_message: {
       es: "Hola, me interesa alquilar el AGP Premium XL. ¿Disponibilidad y precio para mis fechas en Lanzarote?",
       en: "Hi, I'd like to rent the AGP Premium XL. Could you confirm availability and price for my dates in Lanzarote?",

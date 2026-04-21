@@ -18,18 +18,6 @@ export function ChromaKeyFilters() {
                     3 3 3 0 0"
           />
         </filter>
-        <filter id="agp-key-white" colorInterpolationFilters="sRGB">
-          <feColorMatrix
-            type="matrix"
-            values="1 0 0 0 0
-                    0 1 0 0 0
-                    0 0 1 0 0
-                    -9 -9 -9 0 22"
-          />
-          <feComponentTransfer>
-            <feFuncA type="linear" slope="2.2" intercept="-0.35" />
-          </feComponentTransfer>
-        </filter>
       </defs>
     </svg>
   );

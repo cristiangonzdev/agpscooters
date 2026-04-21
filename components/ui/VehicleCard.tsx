@@ -1,11 +1,11 @@
 "use client";
 
+import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 import { Check, Gauge, Route, User, Weight } from "lucide-react";
 import type { Scooter, Lang } from "@/lib/scooters";
 import { getDict } from "@/lib/i18n";
 import { WhatsAppButton } from "./WhatsAppButton";
-import { ChromaKeyedImage } from "./ChromaKeyedImage";
 
 type Props = {
   scooter: Scooter;
@@ -66,11 +66,13 @@ export function VehicleCard({ scooter, lang, index }: Props) {
           }}
         />
 
-        <div className="absolute inset-0 flex items-center justify-center transition-transform duration-[900ms] ease-out group-hover:scale-[1.06]">
-          <ChromaKeyedImage
+        <div className="absolute inset-0 transition-transform duration-[900ms] ease-out group-hover:scale-[1.06]">
+          <Image
             src={scooter.image}
             alt={`${scooter.name} — ${scooter.tagline[lang]}`}
-            className="h-full w-full object-cover"
+            fill
+            sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 100vw"
+            className="object-cover"
           />
         </div>
 
