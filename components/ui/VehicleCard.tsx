@@ -79,12 +79,16 @@ export function VehicleCard({ scooter, lang, index }: Props) {
           className="pointer-events-none absolute inset-0"
           style={{
             background:
-              "radial-gradient(ellipse 95% 80% at 50% 50%, rgba(212,175,55,0.05) 0%, transparent 55%, rgba(10,10,11,0.45) 100%)",
+              "radial-gradient(ellipse 80% 70% at 50% 52%, rgba(212,175,55,0.05) 0%, transparent 50%, rgba(10,10,11,0.75) 100%)",
           }}
         />
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#141416] via-[#141416]/70 to-transparent"
+          className="pointer-events-none absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#141416] via-[#141416]/80 to-transparent"
+        />
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-x-0 top-0 h-16 bg-gradient-to-b from-[#141416]/70 to-transparent"
         />
 
         <div className="absolute right-4 top-4 z-10">

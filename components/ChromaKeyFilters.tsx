@@ -24,8 +24,11 @@ export function ChromaKeyFilters() {
             values="1 0 0 0 0
                     0 1 0 0 0
                     0 0 1 0 0
-                    -5 -5 -5 0 14.5"
+                    -9 -9 -9 0 22"
           />
+          <feComponentTransfer>
+            <feFuncA type="linear" slope="2.2" intercept="-0.35" />
+          </feComponentTransfer>
         </filter>
       </defs>
     </svg>
