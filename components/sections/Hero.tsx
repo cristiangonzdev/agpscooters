@@ -37,11 +37,10 @@ export function Hero({ lang }: Props) {
 
       <motion.div
         initial={reduce ? false : { opacity: 0, scale: 0.9 }}
-        animate={{ opacity: 0.08, scale: 1 }}
+        animate={{ opacity: 0.12, scale: 1 }}
         transition={{ duration: 1.6, ease: [0.22, 1, 0.36, 1] }}
         aria-hidden="true"
         className="pointer-events-none absolute right-[-8%] top-1/2 z-0 hidden -translate-y-1/2 lg:block"
-        style={{ mixBlendMode: "screen" }}
       >
         <Image
           src="/images/logo.jpeg"
@@ -50,6 +49,7 @@ export function Hero({ lang }: Props) {
           height={1024}
           priority
           className="h-[min(80vh,780px)] w-auto"
+          style={{ filter: "url(#agp-key-black)" }}
         />
       </motion.div>
 

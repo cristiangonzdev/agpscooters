@@ -60,7 +60,7 @@ export function VehicleCard({ scooter, lang, index }: Props) {
         className="relative aspect-[4/3] overflow-hidden"
         style={{
           background:
-            "radial-gradient(ellipse 80% 70% at 50% 60%, #F4EDE1 0%, #E5DAC5 55%, #CDB896 100%)",
+            "radial-gradient(ellipse 75% 65% at 50% 58%, #1C1C1F 0%, #141416 55%, #0A0A0B 100%)",
         }}
       >
         <div className="absolute inset-0 flex items-center justify-center transition-transform duration-[900ms] ease-out group-hover:scale-[1.06]">
@@ -70,7 +70,7 @@ export function VehicleCard({ scooter, lang, index }: Props) {
             fill
             sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 100vw"
             className="object-cover"
-            style={{ mixBlendMode: "multiply" }}
+            style={{ filter: "url(#agp-key-white)" }}
           />
         </div>
 
@@ -79,12 +79,12 @@ export function VehicleCard({ scooter, lang, index }: Props) {
           className="pointer-events-none absolute inset-0"
           style={{
             background:
-              "radial-gradient(ellipse 90% 80% at 50% 45%, transparent 0%, transparent 55%, rgba(10,10,11,0.12) 80%, rgba(10,10,11,0.35) 100%)",
+              "radial-gradient(ellipse 95% 80% at 50% 50%, rgba(212,175,55,0.05) 0%, transparent 55%, rgba(10,10,11,0.45) 100%)",
           }}
         />
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-x-0 bottom-0 h-20 bg-gradient-to-t from-[#141416] to-transparent"
+          className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#141416] via-[#141416]/70 to-transparent"
         />
 
         <div className="absolute right-4 top-4 z-10">

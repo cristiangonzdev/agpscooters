@@ -22,7 +22,7 @@ type Testimonial = {
 };
 
 type Dict = {
-  nav: { vehicles: string; how: string; testimonials: string; about: string; faq: string; contact: string; cta: string };
+  nav: { vehicles: string; how: string; testimonials: string; about: string; contact: string; cta: string };
   hero: {
     eyebrow: string;
     title_line1: string;
@@ -68,11 +68,6 @@ type Dict = {
     bullets: { title: string; body: string }[];
     stats: { value: string; label: string }[];
   };
-  faq: {
-    kicker: string;
-    title: string;
-    items: { q: string; a: string }[];
-  };
   contact: {
     kicker: string;
     title: string;
@@ -90,7 +85,17 @@ type Dict = {
     ctaButton: string;
     ctaWhatsAppMessage: string;
   };
-  footer: { tagline: string; privacy: string; terms: string; rights: string };
+  footer: {
+    tagline: string;
+    privacy: string;
+    terms: string;
+    legal: string;
+    rights: string;
+    designedBy: string;
+    designerName: string;
+    designerCta: string;
+    designerUrl: string;
+  };
   aria: { openWhatsApp: string; toggleLang: string; openMenu: string; closeMenu: string };
 };
 
@@ -101,7 +106,6 @@ export const DICT: Record<Lang, Dict> = {
       how: "Cómo funciona",
       testimonials: "Reseñas",
       about: "Por qué AGP",
-      faq: "Preguntas",
       contact: "Contacto",
       cta: "WhatsApp",
     },
@@ -163,31 +167,17 @@ export const DICT: Record<Lang, Dict> = {
       items: [
         {
           name: "Familia Rodríguez",
-          location: "Madrid · Viaje en pareja",
+          location: "Madrid · Viaje de aniversario",
           quote:
             "Queríamos celebrar los 50 años de casados en Lanzarote y la movilidad de mi marido nos frenaba. AGP nos entregó el scooter doble en el hotel de Costa Teguise y pudimos hacer el paseo entero. Una atención impecable de principio a fin.",
           trip: "8 días · AGP Doble",
         },
         {
-          name: "The Whitmore Family",
-          location: "Manchester · Holiday with parents",
+          name: "Familia Martín",
+          location: "Valencia · Escapada familiar",
           quote:
-            "We took my father-in-law on holiday with us for the first time in years. Pedro delivered the scooter at 9 am the day we landed and picked it up at the airport. Honestly, it made the entire trip possible — would rebook tomorrow.",
-          trip: "10 days · AGP Premium XL",
-        },
-        {
-          name: "Familie Schmidt",
-          location: "München · Winterurlaub",
-          quote:
-            "Meine Mutter ist 82 und wollte zum ersten Mal wieder ans Meer. Der AGP Premium XL mit Verdeck war ideal — selbst bei Wind an der Promenade. Pedro spricht hervorragend Deutsch, alles war klar erklärt. Wir kommen wieder.",
-          trip: "6 Tage · AGP Premium XL",
-        },
-        {
-          name: "Famille Laurent",
-          location: "Lyon · Vacances en famille",
-          quote:
-            "Nous cherchions une solution pour que grand-mère puisse nous suivre partout. L'équipe AGP a été adorable, le scooter propre et parfaitement chargé. On a fait le marché de Teguise en famille, un souvenir inoubliable.",
-          trip: "7 jours · AGP Confort",
+            "Mi padre tiene 78 años y no salía apenas desde la operación. Pedro vino al apartamento, le explicó todo con calma y hasta hizo una vuelta con él para ver que iba seguro. Tres semanas después papá nos pide que volvamos. Eso lo dice todo.",
+          trip: "10 días · AGP Premium XL",
         },
       ],
     },
@@ -205,36 +195,6 @@ export const DICT: Record<Lang, Dict> = {
         { value: "8+", label: "años en Lanzarote" },
         { value: "1.200+", label: "familias atendidas" },
         { value: "4,9★", label: "valoración Google" },
-      ],
-    },
-    faq: {
-      kicker: "PREGUNTAS FRECUENTES",
-      title: "Lo que nos preguntan antes de reservar",
-      items: [
-        {
-          q: "¿Hay edad mínima para alquilar?",
-          a: "Sí, 18 años. No hay edad máxima. Muchos de nuestros clientes tienen más de 75 y disfrutan la isla sin problema.",
-        },
-        {
-          q: "¿Necesito licencia de conducir?",
-          a: "No. Nuestros scooters de movilidad no requieren licencia ni seguro específico del cliente. Circulan por acera y zonas peatonales.",
-        },
-        {
-          q: "¿Cómo funciona la cancelación?",
-          a: "Cancelación gratuita hasta 48 h antes de la fecha de entrega. Entre 48 h y 24 h, se aplica el 50 %. Menos de 24 h, el importe completo.",
-        },
-        {
-          q: "¿La autonomía que indicáis es real?",
-          a: "Sí. Medimos cada scooter en un paseo de Costa Teguise con un conductor de 80 kg. La autonomía que verás en la ficha es realista, no de catálogo.",
-        },
-        {
-          q: "¿A qué zonas entregáis?",
-          a: "Costa Teguise, Puerto del Carmen, Playa Blanca, Arrecife y Puerto Calero. Consulta otras zonas por WhatsApp, normalmente podemos ayudarte.",
-        },
-        {
-          q: "¿El seguro va incluido?",
-          a: "Sí. Responsabilidad civil incluida en el precio. Opcionalmente puedes añadir cobertura de robo y daños por 5 €/día.",
-        },
       ],
     },
     contact: {
@@ -259,7 +219,12 @@ export const DICT: Record<Lang, Dict> = {
       tagline: "Scooters de movilidad premium · Lanzarote",
       privacy: "Política de privacidad",
       terms: "Términos y condiciones",
+      legal: "Aviso legal",
       rights: "Todos los derechos reservados.",
+      designedBy: "Designed by",
+      designerName: "Logika Digital",
+      designerCta: "(pincha para visitar web)",
+      designerUrl: "https://logikadigital.com",
     },
     aria: {
       openWhatsApp: "Abrir WhatsApp",
@@ -274,7 +239,6 @@ export const DICT: Record<Lang, Dict> = {
       how: "How it works",
       testimonials: "Reviews",
       about: "Why AGP",
-      faq: "FAQ",
       contact: "Contact",
       cta: "WhatsApp",
     },
@@ -342,25 +306,11 @@ export const DICT: Record<Lang, Dict> = {
           trip: "8 days · AGP Doble",
         },
         {
-          name: "The Whitmore Family",
-          location: "Manchester · Holiday with parents",
+          name: "The Martín family",
+          location: "Valencia · Family getaway",
           quote:
-            "We took my father-in-law on holiday with us for the first time in years. Pedro delivered the scooter at 9 am the day we landed and picked it up at the airport. Honestly, it made the entire trip possible — would rebook tomorrow.",
+            "My father is 78 and had barely left the house since his operation. Pedro came to the apartment, walked him through everything calmly and even did a short loop with him to check he felt safe. Three weeks later, dad's the one asking when we're going back. That says everything.",
           trip: "10 days · AGP Premium XL",
-        },
-        {
-          name: "The Schmidt family",
-          location: "Munich · Winter escape",
-          quote:
-            "My mother is 82 and wanted to see the sea again. The AGP Premium XL with canopy was perfect — even in the wind on the promenade. Pedro spoke excellent German, everything explained clearly. We'll be back.",
-          trip: "6 days · AGP Premium XL",
-        },
-        {
-          name: "The Laurent family",
-          location: "Lyon · Family holiday",
-          quote:
-            "We were looking for a way for grandma to follow us everywhere. The AGP team were lovely, the scooter spotless and fully charged. We did the Teguise market as a family — an unforgettable memory.",
-          trip: "7 days · AGP Confort",
         },
       ],
     },
@@ -378,36 +328,6 @@ export const DICT: Record<Lang, Dict> = {
         { value: "8+", label: "years in Lanzarote" },
         { value: "1,200+", label: "families served" },
         { value: "4.9★", label: "Google rating" },
-      ],
-    },
-    faq: {
-      kicker: "FREQUENTLY ASKED",
-      title: "What guests ask before booking",
-      items: [
-        {
-          q: "Is there a minimum age?",
-          a: "Yes — 18. No upper limit. Many of our guests are 75+ and enjoy the island with zero trouble.",
-        },
-        {
-          q: "Do I need a driving licence?",
-          a: "No. Our mobility scooters don't require a licence or personal insurance. They run on pavements and pedestrian areas.",
-        },
-        {
-          q: "How does cancellation work?",
-          a: "Free cancellation up to 48 hours before delivery. Between 48 h and 24 h, 50 % applies. Under 24 h, full amount.",
-        },
-        {
-          q: "Is the stated range realistic?",
-          a: "Yes. We test each scooter along the Costa Teguise promenade with an 80 kg rider. The range on each card is real-world, not brochure numbers.",
-        },
-        {
-          q: "Which areas do you deliver to?",
-          a: "Costa Teguise, Puerto del Carmen, Playa Blanca, Arrecife and Puerto Calero. For other areas, drop us a WhatsApp — we can usually help.",
-        },
-        {
-          q: "Is insurance included?",
-          a: "Yes. Third-party insurance is included in the price. You can optionally add theft and damage cover for €5/day.",
-        },
       ],
     },
     contact: {
@@ -432,7 +352,12 @@ export const DICT: Record<Lang, Dict> = {
       tagline: "Premium mobility scooters · Lanzarote",
       privacy: "Privacy policy",
       terms: "Terms & conditions",
+      legal: "Legal notice",
       rights: "All rights reserved.",
+      designedBy: "Designed by",
+      designerName: "Logika Digital",
+      designerCta: "(click to visit site)",
+      designerUrl: "https://logikadigital.com",
     },
     aria: {
       openWhatsApp: "Open WhatsApp",
@@ -447,7 +372,6 @@ export const DICT: Record<Lang, Dict> = {
       how: "So funktioniert's",
       testimonials: "Bewertungen",
       about: "Über AGP",
-      faq: "FAQ",
       contact: "Kontakt",
       cta: "WhatsApp",
     },
@@ -515,25 +439,11 @@ export const DICT: Record<Lang, Dict> = {
           trip: "8 Tage · AGP Doble",
         },
         {
-          name: "The Whitmore Family",
-          location: "Manchester · Urlaub mit den Eltern",
+          name: "Familie Martín",
+          location: "Valencia · Familienurlaub",
           quote:
-            "Wir haben meinen Schwiegervater nach Jahren das erste Mal wieder in den Urlaub mitgenommen. Pedro hat den Scooter um 9 Uhr am Ankunftstag geliefert und am Flughafen wieder abgeholt. Es hat die ganze Reise erst möglich gemacht.",
+            "Mein Vater ist 78 und hatte das Haus seit seiner Operation kaum verlassen. Pedro kam zur Wohnung, hat ihm alles in Ruhe erklärt und sogar eine kurze Runde mit ihm gedreht, damit er sich sicher fühlt. Drei Wochen später fragt Papa, wann wir wiederkommen. Das sagt alles.",
           trip: "10 Tage · AGP Premium XL",
-        },
-        {
-          name: "Familie Schmidt",
-          location: "München · Winterurlaub",
-          quote:
-            "Meine Mutter ist 82 und wollte zum ersten Mal wieder ans Meer. Der AGP Premium XL mit Verdeck war ideal — selbst bei Wind an der Promenade. Pedro spricht hervorragend Deutsch, alles war klar erklärt. Wir kommen wieder.",
-          trip: "6 Tage · AGP Premium XL",
-        },
-        {
-          name: "Familie Laurent",
-          location: "Lyon · Familienurlaub",
-          quote:
-            "Wir suchten eine Möglichkeit, damit Oma überall mitkommen konnte. Das AGP-Team war herzlich, der Scooter sauber und voll geladen. Wir waren gemeinsam auf dem Markt von Teguise — eine unvergessliche Erinnerung.",
-          trip: "7 Tage · AGP Confort",
         },
       ],
     },
@@ -551,36 +461,6 @@ export const DICT: Record<Lang, Dict> = {
         { value: "8+", label: "Jahre auf Lanzarote" },
         { value: "1.200+", label: "betreute Familien" },
         { value: "4,9★", label: "Google-Bewertung" },
-      ],
-    },
-    faq: {
-      kicker: "HÄUFIGE FRAGEN",
-      title: "Was Gäste vor der Buchung fragen",
-      items: [
-        {
-          q: "Gibt es ein Mindestalter?",
-          a: "Ja — 18. Es gibt keine Obergrenze. Viele unserer Gäste sind über 75 und genießen die Insel problemlos.",
-        },
-        {
-          q: "Brauche ich einen Führerschein?",
-          a: "Nein. Unsere Mobilitätsscooter erfordern weder Führerschein noch eigene Versicherung. Sie fahren auf Bürgersteigen und in Fußgängerzonen.",
-        },
-        {
-          q: "Wie funktioniert die Stornierung?",
-          a: "Kostenlose Stornierung bis 48 Stunden vor Lieferung. Zwischen 48 h und 24 h fallen 50 % an. Unter 24 h der volle Betrag.",
-        },
-        {
-          q: "Ist die angegebene Reichweite realistisch?",
-          a: "Ja. Wir testen jeden Scooter auf der Promenade von Costa Teguise mit einem 80-kg-Fahrer. Die angegebene Reichweite ist realistisch, nicht aus dem Katalog.",
-        },
-        {
-          q: "In welche Regionen liefern Sie?",
-          a: "Costa Teguise, Puerto del Carmen, Playa Blanca, Arrecife und Puerto Calero. Für andere Gebiete schreiben Sie uns per WhatsApp — in der Regel können wir helfen.",
-        },
-        {
-          q: "Ist eine Versicherung enthalten?",
-          a: "Ja. Haftpflichtversicherung ist im Preis enthalten. Optional können Sie Diebstahl- und Schadensschutz für 5 €/Tag hinzufügen.",
-        },
       ],
     },
     contact: {
@@ -605,7 +485,12 @@ export const DICT: Record<Lang, Dict> = {
       tagline: "Premium-Mobilitätsscooter · Lanzarote",
       privacy: "Datenschutz",
       terms: "AGB",
+      legal: "Impressum",
       rights: "Alle Rechte vorbehalten.",
+      designedBy: "Designed by",
+      designerName: "Logika Digital",
+      designerCta: "(zum Besuch der Website klicken)",
+      designerUrl: "https://logikadigital.com",
     },
     aria: {
       openWhatsApp: "WhatsApp öffnen",
@@ -620,7 +505,6 @@ export const DICT: Record<Lang, Dict> = {
       how: "Comment ça marche",
       testimonials: "Avis",
       about: "Pourquoi AGP",
-      faq: "FAQ",
       contact: "Contact",
       cta: "WhatsApp",
     },
@@ -682,31 +566,17 @@ export const DICT: Record<Lang, Dict> = {
       items: [
         {
           name: "Famille Rodríguez",
-          location: "Madrid · Voyage en couple",
+          location: "Madrid · Voyage anniversaire",
           quote:
             "Nous voulions fêter nos 50 ans de mariage à Lanzarote, mais la mobilité de mon mari nous freinait. AGP a livré le scooter double à notre hôtel de Costa Teguise et nous avons enfin pu faire toute la promenade ensemble. Une attention parfaite de bout en bout.",
           trip: "8 jours · AGP Doble",
         },
         {
-          name: "The Whitmore Family",
-          location: "Manchester · Vacances avec les parents",
+          name: "Famille Martín",
+          location: "Valence · Escapade en famille",
           quote:
-            "Nous avons emmené mon beau-père en vacances pour la première fois depuis des années. Pedro a livré le scooter à 9 h le jour de notre arrivée et l'a récupéré à l'aéroport. Franchement, ça a rendu tout le voyage possible.",
+            "Mon père a 78 ans et sortait à peine depuis son opération. Pedro est venu à l'appartement, lui a tout expliqué calmement et a même fait un petit tour avec lui pour vérifier qu'il se sentait en sécurité. Trois semaines plus tard, c'est papa qui nous demande quand on y retourne. Tout est dit.",
           trip: "10 jours · AGP Premium XL",
-        },
-        {
-          name: "Famille Schmidt",
-          location: "Munich · Escapade hivernale",
-          quote:
-            "Ma mère a 82 ans et voulait revoir la mer. L'AGP Premium XL avec son toit était parfait, même dans le vent sur la promenade. Pedro parle excellemment allemand, tout a été expliqué clairement. Nous reviendrons.",
-          trip: "6 jours · AGP Premium XL",
-        },
-        {
-          name: "Famille Laurent",
-          location: "Lyon · Vacances en famille",
-          quote:
-            "Nous cherchions une solution pour que grand-mère puisse nous suivre partout. L'équipe AGP a été adorable, le scooter propre et parfaitement chargé. On a fait le marché de Teguise en famille, un souvenir inoubliable.",
-          trip: "7 jours · AGP Confort",
         },
       ],
     },
@@ -724,36 +594,6 @@ export const DICT: Record<Lang, Dict> = {
         { value: "8+", label: "ans à Lanzarote" },
         { value: "1 200+", label: "familles accompagnées" },
         { value: "4,9★", label: "note Google" },
-      ],
-    },
-    faq: {
-      kicker: "QUESTIONS FRÉQUENTES",
-      title: "Ce que nos clients demandent avant de réserver",
-      items: [
-        {
-          q: "Y a-t-il un âge minimum ?",
-          a: "Oui, 18 ans. Pas de limite supérieure. Beaucoup de nos clients ont plus de 75 ans et profitent de l'île sans aucun souci.",
-        },
-        {
-          q: "Ai-je besoin d'un permis de conduire ?",
-          a: "Non. Nos scooters de mobilité ne nécessitent ni permis ni assurance personnelle. Ils circulent sur les trottoirs et les zones piétonnes.",
-        },
-        {
-          q: "Comment fonctionne l'annulation ?",
-          a: "Annulation gratuite jusqu'à 48 h avant la livraison. Entre 48 h et 24 h, 50 % s'appliquent. Moins de 24 h, le montant complet.",
-        },
-        {
-          q: "L'autonomie indiquée est-elle réaliste ?",
-          a: "Oui. Nous testons chaque scooter sur la promenade de Costa Teguise avec un conducteur de 80 kg. L'autonomie affichée est réaliste, pas celle du catalogue.",
-        },
-        {
-          q: "Dans quelles zones livrez-vous ?",
-          a: "Costa Teguise, Puerto del Carmen, Playa Blanca, Arrecife et Puerto Calero. Pour d'autres zones, écrivez-nous sur WhatsApp — nous pouvons généralement aider.",
-        },
-        {
-          q: "L'assurance est-elle incluse ?",
-          a: "Oui. La responsabilité civile est incluse dans le prix. Vous pouvez en option ajouter la couverture vol et dommages pour 5 €/jour.",
-        },
       ],
     },
     contact: {
@@ -778,7 +618,12 @@ export const DICT: Record<Lang, Dict> = {
       tagline: "Scooters de mobilité premium · Lanzarote",
       privacy: "Politique de confidentialité",
       terms: "Conditions générales",
+      legal: "Mentions légales",
       rights: "Tous droits réservés.",
+      designedBy: "Designed by",
+      designerName: "Logika Digital",
+      designerCta: "(cliquez pour visiter le site)",
+      designerUrl: "https://logikadigital.com",
     },
     aria: {
       openWhatsApp: "Ouvrir WhatsApp",

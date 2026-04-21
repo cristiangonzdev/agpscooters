@@ -35,7 +35,6 @@ export function Navbar({ lang }: Props) {
     { href: "#testimonials", label: dict.nav.testimonials },
     { href: "#how", label: dict.nav.how },
     { href: "#about", label: dict.nav.about },
-    { href: "#faq", label: dict.nav.faq },
     { href: "#contact", label: dict.nav.contact },
   ];
 

@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
+import { ChromaKeyFilters } from "@/components/ChromaKeyFilters";
 import "./globals.css";
 
 const inter = Inter({
@@ -39,7 +40,10 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="es" className={`${inter.variable} ${playfair.variable}`}>
-      <body className="bg-[#0A0A0B] text-ink-primary antialiased">{children}</body>
+      <body className="bg-[#0A0A0B] text-ink-primary antialiased">
+        <ChromaKeyFilters />
+        {children}
+      </body>
     </html>
   );
 }

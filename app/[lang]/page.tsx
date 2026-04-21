@@ -9,7 +9,6 @@ import { Vehicles } from "@/components/sections/Vehicles";
 import { Testimonials } from "@/components/sections/Testimonials";
 import { HowItWorks } from "@/components/sections/HowItWorks";
 import { About } from "@/components/sections/About";
-import { FAQ } from "@/components/sections/FAQ";
 import { Contact } from "@/components/sections/Contact";
 
 type Props = { params: Promise<{ lang: string }> };
@@ -28,7 +27,6 @@ export default async function LandingPage({ params }: Props) {
         <Testimonials lang={lang} />
         <HowItWorks lang={lang} />
         <About lang={lang} />
-        <FAQ lang={lang} />
         <Contact lang={lang} />
       </main>
       <Footer lang={lang} />

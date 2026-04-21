@@ -15,7 +15,10 @@ const HEIGHTS: Record<NonNullable<Props["size"]>, string> = {
 export function Logo({ className = "", size = "md", priority = false }: Props) {
   const heightClass = HEIGHTS[size];
   return (
-    <span className={`relative inline-flex items-center ${heightClass} ${className}`} aria-label="AGP Mobility Scooters Lanzarote">
+    <span
+      className={`relative inline-flex items-center ${heightClass} ${className}`}
+      aria-label="AGP Mobility Scooters Lanzarote"
+    >
       <Image
         src="/images/logo.jpeg"
         alt="AGP Mobility Scooters Lanzarote"
@@ -23,7 +26,7 @@ export function Logo({ className = "", size = "md", priority = false }: Props) {
         height={1024}
         priority={priority}
         className={`${heightClass} w-auto select-none`}
-        style={{ mixBlendMode: "screen" }}
+        style={{ filter: "url(#agp-key-black)" }}
         draggable={false}
       />
     </span>

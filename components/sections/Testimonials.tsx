@@ -9,26 +9,12 @@ import { SectionDivider } from "../ui/SectionDivider";
 
 type Props = { lang: Lang };
 
-const PHOTO_MAP: Record<number, string | null> = {
-  0: "/images/testimonial-1.jpg",
-  1: null,
-  2: "/images/testimonial-2.jpg",
-  3: null,
-};
-
-function initials(name: string): string {
-  return name
-    .split(/\s+/)
-    .filter((w) => w.length > 0 && !/^(the|family|familie|famille)$/i.test(w))
-    .slice(0, 2)
-    .map((w) => w.charAt(0).toUpperCase())
-    .join("");
-}
+const PHOTOS = ["/images/testimonial-1.jpg", "/images/testimonial-2.jpg"] as const;
 
 export function Testimonials({ lang }: Props) {
   const dict = getDict(lang);
   const reduce = useReducedMotion();
-  const items = dict.testimonials.items;
+  const items = dict.testimonials.items.slice(0, 2);
 
   return (
     <section
@@ -44,7 +30,7 @@ export function Testimonials({ lang }: Props) {
         }}
       />
 
-      <div className="relative mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
+      <div className="relative mx-auto max-w-6xl px-5 sm:px-8 lg:px-12">
         <motion.div
           initial={reduce ? false : { opacity: 0, y: 20 }}
           whileInView={reduce ? undefined : { opacity: 1, y: 0 }}
@@ -69,68 +55,40 @@ export function Testimonials({ lang }: Props) {
 
         <div className="mt-12 grid gap-6 md:grid-cols-2 md:gap-7 lg:gap-8">
           {items.map((item, i) => {
-            const photo = PHOTO_MAP[i] ?? null;
-            const hasPhoto = Boolean(photo);
+            const photo = PHOTOS[i] ?? PHOTOS[0];
             return (
               <motion.figure
                 key={item.name + i}
                 initial={reduce ? false : { opacity: 0, y: 30 }}
                 whileInView={reduce ? undefined : { opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-60px" }}
-                transition={{ duration: 0.7, delay: (i % 2) * 0.08, ease: [0.22, 1, 0.36, 1] }}
+                transition={{ duration: 0.7, delay: i * 0.12, ease: [0.22, 1, 0.36, 1] }}
                 className="group relative flex flex-col overflow-hidden rounded-2xl border border-[#D4AF37]/15 bg-[#141416] transition-colors duration-300 hover:border-[#D4AF37]/40"
               >
-                {hasPhoto && photo ? (
-                  <div className="relative aspect-[4/3] overflow-hidden bg-[#0A0A0B] sm:aspect-[16/10]">
-                    <Image
-                      src={photo}
-                      alt=""
-                      fill
-                      sizes="(min-width: 768px) 50vw, 100vw"
-                      className="object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.04]"
-                    />
-                    <div
-                      aria-hidden="true"
-                      className="pointer-events-none absolute inset-0"
-                      style={{
-                        background:
-                          "linear-gradient(180deg, rgba(10,10,11,0.2) 0%, transparent 40%, rgba(20,20,22,0.85) 100%)",
-                      }}
-                    />
-                    <Quote
-                      aria-hidden="true"
-                      size={42}
-                      strokeWidth={1.2}
-                      className="absolute left-5 top-5 text-[#E8C87C]/80 drop-shadow-[0_4px_12px_rgba(0,0,0,0.6)]"
-                      fill="currentColor"
-                    />
-                  </div>
-                ) : (
-                  <div className="relative flex items-center justify-between border-b border-[#D4AF37]/15 px-6 py-5 sm:px-8">
-                    <div className="flex items-center gap-4">
-                      <div className="relative flex h-14 w-14 flex-none items-center justify-center">
-                        <span className="absolute inset-0 rounded-full border border-[#D4AF37]/35" />
-                        <span className="absolute inset-1.5 rounded-full border border-[#D4AF37]/20" />
-                        <span className="font-display text-lg gold-gradient-text leading-none">
-                          {initials(item.name)}
-                        </span>
-                      </div>
-                      <div>
-                        <div className="font-display text-xl leading-snug text-ink-primary">
-                          {item.name}
-                        </div>
-                        <div className="text-xs text-ink-muted">{item.location}</div>
-                      </div>
-                    </div>
-                    <Quote
-                      aria-hidden="true"
-                      size={28}
-                      strokeWidth={1.4}
-                      className="text-[#E8C87C]/60"
-                      fill="currentColor"
-                    />
-                  </div>
-                )}
+                <div className="relative aspect-[4/3] overflow-hidden bg-[#0A0A0B] sm:aspect-[16/10]">
+                  <Image
+                    src={photo}
+                    alt=""
+                    fill
+                    sizes="(min-width: 768px) 50vw, 100vw"
+                    className="object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.04]"
+                  />
+                  <div
+                    aria-hidden="true"
+                    className="pointer-events-none absolute inset-0"
+                    style={{
+                      background:
+                        "linear-gradient(180deg, rgba(10,10,11,0.15) 0%, transparent 40%, rgba(20,20,22,0.9) 100%)",
+                    }}
+                  />
+                  <Quote
+                    aria-hidden="true"
+                    size={44}
+                    strokeWidth={1.2}
+                    className="absolute left-5 top-5 text-[#E8C87C]/85 drop-shadow-[0_4px_12px_rgba(0,0,0,0.6)]"
+                    fill="currentColor"
+                  />
+                </div>
 
                 <figcaption className="flex flex-1 flex-col gap-5 p-6 sm:p-8">
                   <div className="flex gap-0.5" aria-label="5 estrellas">
@@ -146,16 +104,12 @@ export function Testimonials({ lang }: Props) {
                   </blockquote>
 
                   <div className="mt-auto flex items-center justify-between border-t border-[#D4AF37]/15 pt-4">
-                    {hasPhoto ? (
-                      <div>
-                        <div className="font-display text-base leading-tight text-ink-primary">
-                          {item.name}
-                        </div>
-                        <div className="text-xs text-ink-muted">{item.location}</div>
+                    <div>
+                      <div className="font-display text-base leading-tight text-ink-primary">
+                        {item.name}
                       </div>
-                    ) : (
-                      <div />
-                    )}
+                      <div className="text-xs text-ink-muted">{item.location}</div>
+                    </div>
                     <span className="text-[10px] font-semibold uppercase tracking-[0.22em] text-[#E8C87C]">
                       {item.trip}
                     </span>
