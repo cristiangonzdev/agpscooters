@@ -11,3 +11,7 @@ next-env.d.ts
 
 .DS_Store
 Thumbs.db
+
+# Local scratch assets (not served). Production images live under public/images.
+images/
+WhatsApp Image *.jpeg
