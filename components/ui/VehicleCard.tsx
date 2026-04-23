@@ -56,27 +56,7 @@ export function VehicleCard({ scooter, lang, index }: Props) {
       whileHover={reduce ? undefined : { y: -6 }}
       className="gold-border-shimmer group relative flex flex-col overflow-hidden rounded-2xl bg-[#141416] border border-[#D4AF37]/15 transition-colors duration-300 hover:border-[#D4AF37]/40"
     >
-      <div
-        className="relative aspect-square overflow-hidden"
-        style={{
-          background:
-            "radial-gradient(ellipse 70% 50% at 50% 35%, #1A1A1D 0%, #0E0E10 60%, #0A0A0B 100%)",
-        }}
-      >
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute inset-0"
-          style={{
-            background:
-              "radial-gradient(ellipse 55% 45% at 50% 45%, rgba(212,175,55,0.18) 0%, transparent 70%)",
-          }}
-        />
-
-        <div
-          aria-hidden="true"
-          className="pointer-events-none absolute left-1/2 bottom-[14%] h-6 w-[58%] -translate-x-1/2 rounded-[50%] bg-black/55 blur-[10px]"
-        />
-
+      <div className="relative aspect-square overflow-hidden bg-[#0A0A0B]">
         <div className="absolute inset-0 transition-transform duration-[900ms] ease-out group-hover:scale-[1.04]">
           <Image
             src={scooter.image}
@@ -84,13 +64,31 @@ export function VehicleCard({ scooter, lang, index }: Props) {
             fill
             quality={95}
             sizes="(min-width: 1024px) 30vw, (min-width: 640px) 45vw, 100vw"
-            className="object-contain p-6 sm:p-8 drop-shadow-[0_18px_28px_rgba(0,0,0,0.55)]"
+            className="object-cover object-[50%_42%]"
           />
         </div>
 
         <div
           aria-hidden="true"
-          className="pointer-events-none absolute inset-0 rounded-t-2xl ring-1 ring-inset ring-[#D4AF37]/10"
+          className="pointer-events-none absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(180deg, rgba(10,10,11,0.15) 0%, transparent 28%, transparent 65%, rgba(10,10,11,0.55) 100%)",
+          }}
+        />
+
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0"
+          style={{
+            background:
+              "radial-gradient(ellipse 70% 55% at 50% 50%, transparent 55%, rgba(10,10,11,0.35) 100%)",
+          }}
+        />
+
+        <div
+          aria-hidden="true"
+          className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-[#D4AF37]/15"
         />
 
         <div className="absolute right-4 top-4 z-10">
