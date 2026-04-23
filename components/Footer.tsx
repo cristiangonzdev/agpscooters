@@ -35,24 +35,30 @@ export function Footer({ lang }: Props) {
       </div>
 
       <div className="border-t border-[#D4AF37]/10">
-        <div className="mx-auto flex max-w-7xl flex-col items-center gap-4 px-5 py-6 sm:flex-row sm:justify-between sm:px-8 lg:px-12">
-          <p className="text-xs text-ink-muted text-center sm:text-left">
+        <div className="mx-auto flex max-w-7xl flex-col items-center gap-5 px-5 py-7 sm:px-8 lg:px-12">
+          <p className="text-center text-xs text-ink-muted">
             © {year} AGP Mobility Scooters · {dict.footer.rights}
           </p>
+
+          <div aria-hidden="true" className="flex items-center gap-3">
+            <span className="h-px w-12 bg-gradient-to-r from-transparent to-[#D4AF37]/45" />
+            <span className="h-[5px] w-[5px] rotate-45 bg-[#D4AF37]/55" />
+            <span className="h-px w-12 bg-gradient-to-l from-transparent to-[#D4AF37]/45" />
+          </div>
 
           <a
             href={dict.footer.designerUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="group flex flex-col items-center gap-0.5 text-center sm:items-end sm:text-right"
+            className="group flex flex-col items-center gap-1 text-center"
           >
-            <span className="text-[11px] font-medium tracking-wide text-ink-muted">
+            <span className="text-[11px] font-medium tracking-[0.12em] text-ink-muted">
               {dict.footer.designedBy}{" "}
               <span className="font-semibold gold-gradient-text transition-opacity group-hover:opacity-90">
                 {dict.footer.designerName}
               </span>
             </span>
-            <span className="text-[10px] italic tracking-wide text-ink-muted/80 underline-offset-2 group-hover:underline group-hover:text-[#E8C87C]">
+            <span className="text-[10px] italic tracking-wide text-ink-muted/80 underline-offset-2 group-hover:text-[#E8C87C] group-hover:underline">
               {dict.footer.designerCta}
             </span>
           </a>
