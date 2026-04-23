@@ -19,14 +19,14 @@ export function Testimonials({ lang }: Props) {
   return (
     <section
       id="testimonials"
-      className="relative scroll-mt-24 overflow-hidden bg-[#0A0A0B] py-20 sm:py-28 lg:py-32"
+      className="relative scroll-mt-32 overflow-hidden bg-[#0A0A0B] py-20 sm:py-28 lg:py-32"
     >
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-0"
         style={{
           background:
-            "radial-gradient(ellipse 70% 50% at 20% 20%, rgba(212,175,55,0.07) 0%, transparent 60%), radial-gradient(ellipse 70% 50% at 80% 80%, rgba(27,77,92,0.1) 0%, transparent 60%)",
+            "radial-gradient(ellipse 70% 55% at 20% 20%, rgba(212,175,55,0.11) 0%, transparent 60%), radial-gradient(ellipse 70% 55% at 80% 85%, rgba(212,175,55,0.06) 0%, transparent 65%)",
         }}
       />
 

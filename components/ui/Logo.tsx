@@ -2,7 +2,7 @@ import Image from "next/image";
 
 type Props = {
   className?: string;
-  size?: "sm" | "md" | "lg";
+  size?: "sm" | "md" | "lg" | "xl" | "2xl";
   priority?: boolean;
 };
 
@@ -10,6 +10,8 @@ const HEIGHTS: Record<NonNullable<Props["size"]>, string> = {
   sm: "h-10",
   md: "h-12",
   lg: "h-16",
+  xl: "h-20",
+  "2xl": "h-20 sm:h-24",
 };
 
 export function Logo({ className = "", size = "md", priority = false }: Props) {

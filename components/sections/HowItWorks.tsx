@@ -15,8 +15,20 @@ export function HowItWorks({ lang }: Props) {
   const reduce = useReducedMotion();
 
   return (
-    <section id="how" className="relative scroll-mt-24 bg-[#0A0A0B] py-20 sm:py-28 lg:py-32">
-      <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
+    <section id="how" className="relative scroll-mt-32 overflow-hidden bg-[#0A0A0B] py-20 sm:py-28 lg:py-32">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0"
+        style={{
+          background:
+            "radial-gradient(ellipse 70% 55% at 80% 15%, rgba(212,175,55,0.09) 0%, transparent 60%), radial-gradient(ellipse 60% 50% at 15% 85%, rgba(212,175,55,0.05) 0%, transparent 65%)",
+        }}
+      />
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute top-1/3 left-1/2 -translate-x-1/2 h-[420px] w-[420px] rounded-full bg-[#D4AF37] opacity-[0.05] blur-[140px]"
+      />
+      <div className="relative mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
         <motion.div
           initial={reduce ? false : { opacity: 0, y: 20 }}
           whileInView={reduce ? undefined : { opacity: 1, y: 0 }}

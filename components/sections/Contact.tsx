@@ -53,11 +53,13 @@ export function Contact({ lang }: Props) {
       icon: MapPin,
       label: dict.contact.address,
       value: dict.contact.addressValue,
+      href: dict.contact.addressMapsUrl,
+      external: true,
     },
   ];
 
   return (
-    <section id="contact" className="relative scroll-mt-24 border-t border-[#D4AF37]/20 bg-marble-secondary py-20 sm:py-28 lg:py-32">
+    <section id="contact" className="relative scroll-mt-32 border-t border-[#D4AF37]/20 bg-marble-secondary py-20 sm:py-28 lg:py-32">
       <div className="mx-auto max-w-7xl px-5 sm:px-8 lg:px-12">
         <motion.div
           initial={reduce ? false : { opacity: 0, y: 20 }}

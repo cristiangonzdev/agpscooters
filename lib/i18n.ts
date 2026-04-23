@@ -64,7 +64,6 @@ type Dict = {
     title: string;
     lead: string;
     bullets: { title: string; body: string }[];
-    stats: { value: string; label: string }[];
   };
   contact: {
     kicker: string;
@@ -78,6 +77,7 @@ type Dict = {
     coverageValue: string;
     address: string;
     addressValue: string;
+    addressMapsUrl: string;
     ctaTitle: string;
     ctaBody: string;
     ctaButton: string;
@@ -185,11 +185,6 @@ export const DICT: Record<Lang, Dict> = {
         { title: "Scooters revisados antes de cada alquiler", body: "Batería al 100 %, frenos, luces y presión de ruedas comprobados. Siempre." },
         { title: "Atención en tu idioma", body: "Español, inglés, alemán y francés. Cualquier duda durante el alquiler, una llamada y lo resolvemos." },
       ],
-      stats: [
-        { value: "8+", label: "años en Lanzarote" },
-        { value: "1.200+", label: "familias atendidas" },
-        { value: "4,9★", label: "valoración Google" },
-      ],
     },
     contact: {
       kicker: "CONTACTO",
@@ -198,11 +193,12 @@ export const DICT: Record<Lang, Dict> = {
       whatsapp: "WhatsApp",
       email: "Email",
       hours: "Horario",
-      hoursValue: "Todos los días · 9:00 – 20:00",
+      hoursValue: "Todos los días · 09:00 – 18:00",
       coverage: "Zonas de entrega",
       coverageValue: "Costa Teguise · Puerto del Carmen · Playa Blanca · Arrecife · Puerto Calero",
       address: "Dirección fiscal",
-      addressValue: "Lanzarote, Islas Canarias, España",
+      addressValue: "Calle León y Castillo 147B · Arrecife · Lanzarote",
+      addressMapsUrl: "https://www.google.com/maps/search/?api=1&query=Calle+Le%C3%B3n+y+Castillo+147B+Arrecife+Lanzarote",
       ctaTitle: "¿Listo para moverte sin límites?",
       ctaBody: "Una conversación por WhatsApp. Te confirmamos disponibilidad y precio en minutos.",
       ctaButton: "Escribir por WhatsApp",
@@ -314,11 +310,6 @@ export const DICT: Record<Lang, Dict> = {
         { title: "Every scooter serviced before rental", body: "Battery at 100 %, brakes, lights and tyre pressure checked. Every time." },
         { title: "Support in your language", body: "Spanish, English, German and French. One call and any issue is sorted during your rental." },
       ],
-      stats: [
-        { value: "8+", label: "years in Lanzarote" },
-        { value: "1,200+", label: "families served" },
-        { value: "4.9★", label: "Google rating" },
-      ],
     },
     contact: {
       kicker: "CONTACT",
@@ -327,11 +318,12 @@ export const DICT: Record<Lang, Dict> = {
       whatsapp: "WhatsApp",
       email: "Email",
       hours: "Hours",
-      hoursValue: "Every day · 9:00 am – 8:00 pm",
+      hoursValue: "Every day · 09:00 – 18:00",
       coverage: "Delivery zones",
       coverageValue: "Costa Teguise · Puerto del Carmen · Playa Blanca · Arrecife · Puerto Calero",
       address: "Registered address",
-      addressValue: "Lanzarote, Canary Islands, Spain",
+      addressValue: "Calle León y Castillo 147B · Arrecife · Lanzarote",
+      addressMapsUrl: "https://www.google.com/maps/search/?api=1&query=Calle+Le%C3%B3n+y+Castillo+147B+Arrecife+Lanzarote",
       ctaTitle: "Ready to move without limits?",
       ctaBody: "One quick chat on WhatsApp. Availability and price confirmed in minutes.",
       ctaButton: "Message us on WhatsApp",
@@ -443,11 +435,6 @@ export const DICT: Record<Lang, Dict> = {
         { title: "Vor jeder Miete geprüft", body: "Akku auf 100 %, Bremsen, Licht und Reifendruck kontrolliert. Immer." },
         { title: "Betreuung in Ihrer Sprache", body: "Spanisch, Englisch, Deutsch und Französisch. Ein Anruf und jedes Problem ist während der Miete gelöst." },
       ],
-      stats: [
-        { value: "8+", label: "Jahre auf Lanzarote" },
-        { value: "1.200+", label: "betreute Familien" },
-        { value: "4,9★", label: "Google-Bewertung" },
-      ],
     },
     contact: {
       kicker: "KONTAKT",
@@ -456,11 +443,12 @@ export const DICT: Record<Lang, Dict> = {
       whatsapp: "WhatsApp",
       email: "E-Mail",
       hours: "Öffnungszeiten",
-      hoursValue: "Täglich · 9:00 – 20:00 Uhr",
+      hoursValue: "Täglich · 09:00 – 18:00 Uhr",
       coverage: "Liefergebiete",
       coverageValue: "Costa Teguise · Puerto del Carmen · Playa Blanca · Arrecife · Puerto Calero",
       address: "Firmensitz",
-      addressValue: "Lanzarote, Kanarische Inseln, Spanien",
+      addressValue: "Calle León y Castillo 147B · Arrecife · Lanzarote",
+      addressMapsUrl: "https://www.google.com/maps/search/?api=1&query=Calle+Le%C3%B3n+y+Castillo+147B+Arrecife+Lanzarote",
       ctaTitle: "Bereit, sich ohne Grenzen zu bewegen?",
       ctaBody: "Ein kurzes Gespräch per WhatsApp. Verfügbarkeit und Preis in Minuten bestätigt.",
       ctaButton: "Per WhatsApp schreiben",
@@ -572,11 +560,6 @@ export const DICT: Record<Lang, Dict> = {
         { title: "Scooter révisé avant chaque location", body: "Batterie à 100 %, freins, lumières et pression des pneus vérifiés. À chaque fois." },
         { title: "Assistance dans votre langue", body: "Espagnol, anglais, allemand et français. Un appel et tout problème est réglé pendant votre location." },
       ],
-      stats: [
-        { value: "8+", label: "ans à Lanzarote" },
-        { value: "1 200+", label: "familles accompagnées" },
-        { value: "4,9★", label: "note Google" },
-      ],
     },
     contact: {
       kicker: "CONTACT",
@@ -585,11 +568,12 @@ export const DICT: Record<Lang, Dict> = {
       whatsapp: "WhatsApp",
       email: "E-mail",
       hours: "Horaires",
-      hoursValue: "Tous les jours · 9h00 – 20h00",
+      hoursValue: "Tous les jours · 09h00 – 18h00",
       coverage: "Zones de livraison",
       coverageValue: "Costa Teguise · Puerto del Carmen · Playa Blanca · Arrecife · Puerto Calero",
       address: "Adresse légale",
-      addressValue: "Lanzarote, Îles Canaries, Espagne",
+      addressValue: "Calle León y Castillo 147B · Arrecife · Lanzarote",
+      addressMapsUrl: "https://www.google.com/maps/search/?api=1&query=Calle+Le%C3%B3n+y+Castillo+147B+Arrecife+Lanzarote",
       ctaTitle: "Prêt à bouger sans limites ?",
       ctaBody: "Une conversation rapide sur WhatsApp. Disponibilité et tarif confirmés en quelques minutes.",
       ctaButton: "Écrire sur WhatsApp",
