@@ -25,7 +25,7 @@ export function TrustStrip({ lang }: Props) {
         className="pointer-events-none absolute inset-0"
         style={{
           backgroundImage:
-            "radial-gradient(ellipse 60% 100% at 50% 50%, rgba(212,175,55,0.05) 0%, transparent 70%)",
+            "radial-gradient(ellipse 70% 100% at 50% 50%, rgba(212,175,55,0.1) 0%, transparent 70%)",
         }}
       />
       <div className="mx-auto grid max-w-7xl grid-cols-2 gap-y-6 px-5 py-8 sm:px-8 lg:grid-cols-4 lg:gap-0 lg:divide-x lg:divide-[#D4AF37]/15 lg:px-12">

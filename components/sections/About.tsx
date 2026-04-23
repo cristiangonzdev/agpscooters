@@ -15,7 +15,7 @@ export function About({ lang }: Props) {
   const reduce = useReducedMotion();
 
   return (
-    <section id="about" className="relative scroll-mt-24 bg-marble-secondary py-20 sm:py-28 lg:py-32">
+    <section id="about" className="relative scroll-mt-32 bg-marble-secondary py-20 sm:py-28 lg:py-32">
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-x-0 top-0 z-0"
@@ -81,24 +81,6 @@ export function About({ lang }: Props) {
           })}
         </motion.ul>
 
-        <motion.div
-          initial={reduce ? false : { opacity: 0, y: 24 }}
-          whileInView={reduce ? undefined : { opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-80px" }}
-          transition={{ duration: 0.9, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-          className="mt-16 grid grid-cols-3 gap-4 border-y border-[#D4AF37]/15 py-8 sm:gap-8 sm:py-10"
-        >
-          {dict.about.stats.map((stat) => (
-            <div key={stat.label} className="text-center">
-              <div className="font-display text-4xl tabular-nums gold-gradient-text leading-none sm:text-5xl md:text-6xl">
-                {stat.value}
-              </div>
-              <div className="mt-3 text-[10px] font-medium uppercase tracking-[0.28em] text-ink-muted sm:text-[11px]">
-                {stat.label}
-              </div>
-            </div>
-          ))}
-        </motion.div>
       </div>
     </section>
   );

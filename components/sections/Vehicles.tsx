@@ -14,7 +14,7 @@ export function Vehicles({ lang }: Props) {
   const reduce = useReducedMotion();
 
   return (
-    <section id="vehicles" className="relative scroll-mt-24 bg-marble py-20 sm:py-28 lg:py-32">
+    <section id="vehicles" className="relative scroll-mt-32 bg-marble py-20 sm:py-28 lg:py-32">
       <div
         aria-hidden="true"
         className="pointer-events-none absolute inset-x-0 top-0 flex justify-center"

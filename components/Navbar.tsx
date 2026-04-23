@@ -47,13 +47,13 @@ export function Navbar({ lang }: Props) {
           ? "bg-[#0A0A0B]/80 backdrop-blur-md border-b border-[#D4AF37]/15"
           : "bg-transparent border-b border-transparent"}`}
     >
-      <nav className="mx-auto flex h-[84px] max-w-7xl items-center justify-between px-5 sm:px-8 lg:px-12">
+      <nav className="mx-auto flex h-[100px] max-w-7xl items-center justify-between px-5 sm:h-[116px] sm:px-8 lg:px-12">
         <Link
           href={`/${lang}`}
           className="group flex items-center"
           aria-label="AGP Mobility Scooters Lanzarote"
         >
-          <Logo size="lg" />
+          <Logo size="2xl" priority />
         </Link>
 
         <ul className="hidden items-center gap-6 lg:flex xl:gap-8">
@@ -106,7 +106,7 @@ export function Navbar({ lang }: Props) {
           />
           <div className="absolute inset-x-0 top-0 flex flex-col bg-[#0A0A0B] px-5 pb-10 pt-5">
             <div className="flex items-center justify-between">
-              <Logo size="lg" />
+              <Logo size="xl" />
               <button
                 type="button"
                 onClick={() => setOpen(false)}

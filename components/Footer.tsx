@@ -12,9 +12,11 @@ export function Footer({ lang }: Props) {
   return (
     <footer className="relative border-t border-[#D4AF37]/15 bg-[#0A0A0B]">
       <div className="mx-auto flex max-w-7xl flex-col gap-10 px-5 py-12 sm:px-8 lg:flex-row lg:items-start lg:justify-between lg:px-12">
-        <div className="flex flex-col gap-3">
-          <Logo size="md" />
-          <p className="text-xs text-ink-muted">{dict.footer.tagline}</p>
+        <div className="flex flex-col gap-4">
+          <Logo size="2xl" />
+          <p className="text-base font-medium tracking-wide text-ink-primary/85 sm:text-lg">
+            {dict.footer.tagline}
+          </p>
         </div>
 
         <div className="flex flex-wrap items-center gap-x-6 gap-y-3 text-xs text-ink-muted">
