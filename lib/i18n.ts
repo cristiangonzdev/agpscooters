@@ -42,8 +42,12 @@ type Dict = {
     badge1: string;
     badge2: string;
     badgePremium: string;
-    from: string;
-    perDay: string;
+    pricing: {
+      chooseDuration: string;
+      durations: { "4h": string; "1d": string; "3d": string; "7d": string };
+      forDuration: { "4h": string; "1d": string; "3d": string; "7d": string };
+      perDayHint: string;
+    };
     cta: string;
   };
   how: {
@@ -142,8 +146,12 @@ export const DICT: Record<Lang, Dict> = {
       badge1: "1 PERSONA",
       badge2: "2 PERSONAS",
       badgePremium: "PREMIUM",
-      from: "Desde",
-      perDay: "€/día",
+      pricing: {
+        chooseDuration: "Elige duración",
+        durations: { "4h": "4 h", "1d": "1 día", "3d": "3 días", "7d": "1 semana" },
+        forDuration: { "4h": "por 4 horas", "1d": "por 1 día", "3d": "por 3 días", "7d": "por 1 semana" },
+        perDayHint: "/día",
+      },
       cta: "Reservar este modelo por WhatsApp",
     },
     how: {
@@ -267,8 +275,12 @@ export const DICT: Record<Lang, Dict> = {
       badge1: "1 SEAT",
       badge2: "2 SEATS",
       badgePremium: "PREMIUM",
-      from: "From",
-      perDay: "€/day",
+      pricing: {
+        chooseDuration: "Choose duration",
+        durations: { "4h": "4 h", "1d": "1 day", "3d": "3 days", "7d": "1 week" },
+        forDuration: { "4h": "for 4 hours", "1d": "for 1 day", "3d": "for 3 days", "7d": "for 1 week" },
+        perDayHint: "/day",
+      },
       cta: "Book this model on WhatsApp",
     },
     how: {
@@ -392,8 +404,12 @@ export const DICT: Record<Lang, Dict> = {
       badge1: "1 PLATZ",
       badge2: "2 PLÄTZE",
       badgePremium: "PREMIUM",
-      from: "Ab",
-      perDay: "€/Tag",
+      pricing: {
+        chooseDuration: "Dauer wählen",
+        durations: { "4h": "4 Std.", "1d": "1 Tag", "3d": "3 Tage", "7d": "1 Woche" },
+        forDuration: { "4h": "für 4 Stunden", "1d": "für 1 Tag", "3d": "für 3 Tage", "7d": "für 1 Woche" },
+        perDayHint: "/Tag",
+      },
       cta: "Dieses Modell per WhatsApp buchen",
     },
     how: {
@@ -517,8 +533,12 @@ export const DICT: Record<Lang, Dict> = {
       badge1: "1 PLACE",
       badge2: "2 PLACES",
       badgePremium: "PREMIUM",
-      from: "À partir de",
-      perDay: "€/jour",
+      pricing: {
+        chooseDuration: "Choisir la durée",
+        durations: { "4h": "4 h", "1d": "1 jour", "3d": "3 jours", "7d": "1 semaine" },
+        forDuration: { "4h": "pour 4 heures", "1d": "pour 1 jour", "3d": "pour 3 jours", "7d": "pour 1 semaine" },
+        perDayHint: "/jour",
+      },
       cta: "Réserver ce modèle sur WhatsApp",
     },
     how: {

@@ -29,8 +29,8 @@ Edita el array `SCOOTERS` en [`lib/scooters.ts`](lib/scooters.ts). Cada entrada 
 - `capacity` — `1` o `2`.
 - `badge` — `"1-PAX"` | `"2-PAX"` | `"PREMIUM"`. Determina el pill de la esquina.
 - `range_km`, `max_speed_kmh`, `max_weight_kg` — specs numéricos.
-- `price_from_eur_day` — precio destacado.
-- `price_crossed_eur_day` — opcional, precio tachado (descuento visual).
+- `prices` — array de tarifas por duración (`"4h" | "1d" | "3d" | "7d"`) con `price_eur`. La tarjeta muestra pills dinámicos para cada entrada.
+- `default_duration` — duración seleccionada por defecto al renderizar la tarjeta.
 - `image` — ruta dentro de `/public` (ej. `/images/scooter-confort.jpg`).
 - `whatsapp_message.es` / `whatsapp_message.en` — texto pre-rellenado del WhatsApp.
 

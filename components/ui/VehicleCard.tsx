@@ -1,9 +1,10 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
-import { motion, useReducedMotion } from "framer-motion";
+import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { Check, Gauge, Route, User, Weight } from "lucide-react";
-import type { Scooter, Lang } from "@/lib/scooters";
+import type { Scooter, Lang, PriceDuration } from "@/lib/scooters";
 import { getDict } from "@/lib/i18n";
 import { WhatsAppButton } from "./WhatsAppButton";
 
@@ -16,7 +17,19 @@ type Props = {
 export function VehicleCard({ scooter, lang, index }: Props) {
   const dict = getDict(lang);
   const reduce = useReducedMotion();
-  const { specsLabels, from, perDay, cta, badge1, badge2, badgePremium } = dict.vehicles;
+  const { specsLabels, pricing, cta, badge1, badge2, badgePremium } = dict.vehicles;
+
+  const [selected, setSelected] = useState<PriceDuration>(scooter.default_duration);
+  const selectedTier =
+    scooter.prices.find((p) => p.duration === selected) ?? scooter.prices[0];
+
+  const perDayEquivalent = (() => {
+    const days =
+      selectedTier.duration === "3d" ? 3 : selectedTier.duration === "7d" ? 7 : null;
+    if (!days) return null;
+    const value = selectedTier.price_eur / days;
+    return Number.isInteger(value) ? value.toFixed(0) : value.toFixed(1);
+  })();
 
   const specs = [
     { icon: Route, label: specsLabels.range, value: `${scooter.range_km} km` },
@@ -46,6 +59,18 @@ export function VehicleCard({ scooter, lang, index }: Props) {
     fr: `Réserver ${scooter.name} sur WhatsApp`,
   };
   const whatsappAria = bookLabels[lang];
+
+  const buildWhatsAppMessage = (): string => {
+    const durationLabel = pricing.durations[selectedTier.duration];
+    const base = scooter.whatsapp_message[lang];
+    const tail: Record<Lang, string> = {
+      es: ` Me interesa la tarifa de ${durationLabel} (${selectedTier.price_eur} €).`,
+      en: ` I'm interested in the ${durationLabel} rate (€${selectedTier.price_eur}).`,
+      de: ` Ich interessiere mich für den Tarif ${durationLabel} (${selectedTier.price_eur} €).`,
+      fr: ` Je suis intéressé par le tarif ${durationLabel} (${selectedTier.price_eur} €).`,
+    };
+    return `${base}${tail[lang]}`;
+  };
 
   return (
     <motion.article
@@ -127,24 +152,87 @@ export function VehicleCard({ scooter, lang, index }: Props) {
         </ul>
 
         <div className="mt-auto">
-          <div className="flex items-baseline gap-3">
-            {scooter.price_crossed_eur_day ? (
-              <span className="text-sm tabular-nums text-ink-muted line-through decoration-[#8B6914] decoration-1">
-                {scooter.price_crossed_eur_day}€
-              </span>
-            ) : null}
-            <div className="flex items-baseline gap-1.5">
-              <span className="text-[11px] uppercase tracking-[0.18em] text-ink-muted">{from}</span>
-              <span className="font-display text-4xl tabular-nums gold-gradient-text leading-none">
-                {scooter.price_from_eur_day}
-              </span>
-              <span className="text-sm text-[#E8C87C]">{perDay}</span>
+          <div className="rounded-xl border border-[#D4AF37]/15 bg-[#0A0A0B]/60 p-4 sm:p-5">
+            <div
+              className="text-[10px] uppercase tracking-[0.18em] text-ink-muted"
+              id={`pricing-${scooter.id}`}
+            >
+              {pricing.chooseDuration}
+            </div>
+
+            <div
+              role="tablist"
+              aria-labelledby={`pricing-${scooter.id}`}
+              className="mt-2.5 flex flex-wrap gap-1.5"
+            >
+              {scooter.prices.map((tier) => {
+                const isActive = tier.duration === selected;
+                return (
+                  <button
+                    key={tier.duration}
+                    role="tab"
+                    type="button"
+                    aria-selected={isActive}
+                    onClick={() => setSelected(tier.duration)}
+                    className={`relative inline-flex min-h-[34px] items-center rounded-full border px-3 py-1 text-[11px] font-medium tracking-wide transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#D4AF37]/70 focus-visible:ring-offset-2 focus-visible:ring-offset-[#0A0A0B] ${
+                      isActive
+                        ? "border-[#D4AF37] bg-[#D4AF37] text-[#0A0A0B] shadow-[0_0_14px_-2px_rgba(212,175,55,0.55)]"
+                        : "border-[#D4AF37]/25 bg-transparent text-[#E8C87C]/80 hover:border-[#D4AF37]/60 hover:text-[#E8C87C]"
+                    }`}
+                  >
+                    {pricing.durations[tier.duration]}
+                  </button>
+                );
+              })}
+            </div>
+
+            <div className="mt-4 flex items-end justify-between gap-4">
+              <div className="relative min-w-0 overflow-hidden">
+                <AnimatePresence mode="popLayout" initial={false}>
+                  <motion.div
+                    key={selectedTier.duration}
+                    initial={reduce ? false : { opacity: 0, y: 12 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={reduce ? { opacity: 0 } : { opacity: 0, y: -12 }}
+                    transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
+                    className="flex items-baseline gap-1"
+                  >
+                    <span className="font-display text-5xl leading-none tabular-nums gold-gradient-text">
+                      {selectedTier.price_eur}
+                    </span>
+                    <span className="font-display text-3xl leading-none text-[#E8C87C]">€</span>
+                  </motion.div>
+                </AnimatePresence>
+
+                <AnimatePresence mode="popLayout" initial={false}>
+                  <motion.div
+                    key={`sub-${selectedTier.duration}`}
+                    initial={reduce ? false : { opacity: 0, y: 6 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 0.24, ease: "easeOut" }}
+                    className="mt-1.5 flex items-center gap-2 text-xs text-ink-muted"
+                  >
+                    <span>{pricing.forDuration[selectedTier.duration]}</span>
+                    {perDayEquivalent ? (
+                      <>
+                        <span aria-hidden="true" className="text-[#D4AF37]/30">
+                          ·
+                        </span>
+                        <span className="tabular-nums text-[#E8C87C]/80">
+                          {perDayEquivalent} €{pricing.perDayHint}
+                        </span>
+                      </>
+                    ) : null}
+                  </motion.div>
+                </AnimatePresence>
+              </div>
             </div>
           </div>
 
           <div className="mt-5">
             <WhatsAppButton
-              message={scooter.whatsapp_message[lang]}
+              message={buildWhatsAppMessage()}
               ariaLabel={whatsappAria}
               size="lg"
               fullWidth

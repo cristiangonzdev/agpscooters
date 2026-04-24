@@ -2,6 +2,13 @@ export type Lang = "es" | "en" | "de" | "fr";
 
 export type ScooterBadge = "1-PAX" | "2-PAX" | "PREMIUM";
 
+export type PriceDuration = "4h" | "1d" | "3d" | "7d";
+
+export type PriceTier = {
+  duration: PriceDuration;
+  price_eur: number;
+};
+
 export type Scooter = {
   id: string;
   name: string;
@@ -11,8 +18,8 @@ export type Scooter = {
   range_km: number;
   max_speed_kmh: number;
   max_weight_kg: number;
-  price_from_eur_day: number;
-  price_crossed_eur_day?: number;
+  prices: PriceTier[];
+  default_duration: PriceDuration;
   image: string;
   whatsapp_message: Record<Lang, string>;
 };
@@ -32,7 +39,12 @@ export const SCOOTERS: Scooter[] = [
     range_km: 30,
     max_speed_kmh: 12,
     max_weight_kg: 150,
-    price_from_eur_day: 20,
+    prices: [
+      { duration: "1d", price_eur: 20 },
+      { duration: "3d", price_eur: 50 },
+      { duration: "7d", price_eur: 100 },
+    ],
+    default_duration: "1d",
     image: "/images/scooter-confort.png",
     whatsapp_message: {
       es: "Hola, me interesa alquilar el AGP Confort. ¿Disponibilidad y precio para mis fechas en Lanzarote?",
@@ -55,7 +67,12 @@ export const SCOOTERS: Scooter[] = [
     range_km: 40,
     max_speed_kmh: 15,
     max_weight_kg: 220,
-    price_from_eur_day: 50,
+    prices: [
+      { duration: "1d", price_eur: 50 },
+      { duration: "3d", price_eur: 100 },
+      { duration: "7d", price_eur: 190 },
+    ],
+    default_duration: "1d",
     image: "/images/scooter-doble.png",
     whatsapp_message: {
       es: "Hola, me interesa alquilar el AGP Doble. ¿Disponibilidad y precio para mis fechas en Lanzarote?",
@@ -78,7 +95,13 @@ export const SCOOTERS: Scooter[] = [
     range_km: 55,
     max_speed_kmh: 20,
     max_weight_kg: 250,
-    price_from_eur_day: 60,
+    prices: [
+      { duration: "4h", price_eur: 50 },
+      { duration: "1d", price_eur: 60 },
+      { duration: "3d", price_eur: 120 },
+      { duration: "7d", price_eur: 250 },
+    ],
+    default_duration: "1d",
     image: "/images/scooter-premium.png",
     whatsapp_message: {
       es: "Hola, me interesa alquilar el AGP Premium XL. ¿Disponibilidad y precio para mis fechas en Lanzarote?",
