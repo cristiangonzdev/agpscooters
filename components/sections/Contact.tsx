@@ -8,7 +8,7 @@ import { buildWhatsAppLink, WHATSAPP_NUMBER } from "@/lib/whatsapp";
 
 type Props = { lang: Lang };
 
-const EMAIL = "hola@agpmobilityscooters.com";
+const EMAIL = "admin@agpscooterslanzarote.com";
 
 function formatPhone(raw: string): string {
   return `+${raw.slice(0, 2)} ${raw.slice(2, 5)} ${raw.slice(5, 8)} ${raw.slice(8, 10)} ${raw.slice(10)}`;

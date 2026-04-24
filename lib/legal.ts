@@ -36,7 +36,7 @@ const PRIVACY: Record<Lang, LegalDoc> = {
         body: [
           "AGP Mobility Scooters (en adelante, \"AGP\").",
           "Dirección: Lanzarote, Islas Canarias, España.",
-          "Contacto: hola@agpmobilityscooters.com · +34 613 99 24 17.",
+          "Contacto: admin@agpscooterslanzarote.com · +34 613 99 24 17.",
           "CIF / NIF: [COMPLETAR CON DATOS DEL TITULAR].",
         ],
       },
@@ -72,7 +72,7 @@ const PRIVACY: Record<Lang, LegalDoc> = {
       {
         heading: "6. Tus derechos",
         body: [
-          "Puedes ejercer los derechos de acceso, rectificación, supresión, oposición, limitación y portabilidad escribiéndonos a hola@agpmobilityscooters.com.",
+          "Puedes ejercer los derechos de acceso, rectificación, supresión, oposición, limitación y portabilidad escribiéndonos a admin@agpscooterslanzarote.com.",
           "Si consideras que no hemos atendido correctamente tu solicitud, puedes reclamar ante la Agencia Española de Protección de Datos (www.aepd.es).",
         ],
       },
@@ -95,7 +95,7 @@ const PRIVACY: Record<Lang, LegalDoc> = {
         body: [
           "AGP Mobility Scooters (\"AGP\").",
           "Address: Lanzarote, Canary Islands, Spain.",
-          "Contact: hola@agpmobilityscooters.com · +34 613 99 24 17.",
+          "Contact: admin@agpscooterslanzarote.com · +34 613 99 24 17.",
           "Tax ID: [TO BE COMPLETED BY OWNER].",
         ],
       },
@@ -131,7 +131,7 @@ const PRIVACY: Record<Lang, LegalDoc> = {
       {
         heading: "6. Your rights",
         body: [
-          "You can exercise your rights of access, rectification, erasure, objection, restriction and portability by emailing hola@agpmobilityscooters.com.",
+          "You can exercise your rights of access, rectification, erasure, objection, restriction and portability by emailing admin@agpscooterslanzarote.com.",
           "If you believe we haven't handled your request properly, you may lodge a complaint with the Spanish Data Protection Agency (www.aepd.es).",
         ],
       },
@@ -154,7 +154,7 @@ const PRIVACY: Record<Lang, LegalDoc> = {
         body: [
           "AGP Mobility Scooters (nachfolgend AGP).",
           "Anschrift: Lanzarote, Kanarische Inseln, Spanien.",
-          "Kontakt: hola@agpmobilityscooters.com · +34 613 99 24 17.",
+          "Kontakt: admin@agpscooterslanzarote.com · +34 613 99 24 17.",
           "Steuernummer (CIF/NIF): [VOM INHABER ZU ERGÄNZEN].",
         ],
       },
@@ -190,7 +190,7 @@ const PRIVACY: Record<Lang, LegalDoc> = {
       {
         heading: "6. Ihre Rechte",
         body: [
-          "Sie können Ihre Rechte auf Auskunft, Berichtigung, Löschung, Widerspruch, Einschränkung und Datenübertragbarkeit per E-Mail an hola@agpmobilityscooters.com ausüben.",
+          "Sie können Ihre Rechte auf Auskunft, Berichtigung, Löschung, Widerspruch, Einschränkung und Datenübertragbarkeit per E-Mail an admin@agpscooterslanzarote.com ausüben.",
           "Sollten wir Ihre Anfrage nicht zufriedenstellend bearbeiten, können Sie sich an die spanische Datenschutzbehörde (AEPD, www.aepd.es) wenden.",
         ],
       },
@@ -213,7 +213,7 @@ const PRIVACY: Record<Lang, LegalDoc> = {
         body: [
           "AGP Mobility Scooters (« AGP »).",
           "Adresse : Lanzarote, Îles Canaries, Espagne.",
-          "Contact : hola@agpmobilityscooters.com · +34 613 99 24 17.",
+          "Contact : admin@agpscooterslanzarote.com · +34 613 99 24 17.",
           "Numéro fiscal (CIF/NIF) : [À COMPLÉTER PAR LE TITULAIRE].",
         ],
       },
@@ -249,7 +249,7 @@ const PRIVACY: Record<Lang, LegalDoc> = {
       {
         heading: "6. Vos droits",
         body: [
-          "Vous pouvez exercer vos droits d'accès, rectification, effacement, opposition, limitation et portabilité par e-mail à hola@agpmobilityscooters.com.",
+          "Vous pouvez exercer vos droits d'accès, rectification, effacement, opposition, limitation et portabilité par e-mail à admin@agpscooterslanzarote.com.",
           "Si vous estimez que nous n'avons pas traité correctement votre demande, vous pouvez saisir l'Agence espagnole de protection des données (www.aepd.es).",
         ],
       },
@@ -552,7 +552,7 @@ const LEGAL_NOTICE: Record<Lang, LegalDoc> = {
           "Titular: [COMPLETAR CON NOMBRE COMERCIAL Y/O RAZÓN SOCIAL].",
           "CIF / NIF: [COMPLETAR].",
           "Domicilio: Lanzarote, Islas Canarias, España.",
-          "Contacto: hola@agpmobilityscooters.com · +34 613 99 24 17.",
+          "Contacto: admin@agpscooterslanzarote.com · +34 613 99 24 17.",
         ],
       },
       {
@@ -607,7 +607,7 @@ const LEGAL_NOTICE: Record<Lang, LegalDoc> = {
           "Owner: [COMPLETE WITH COMMERCIAL NAME / COMPANY NAME].",
           "Tax ID: [COMPLETE].",
           "Address: Lanzarote, Canary Islands, Spain.",
-          "Contact: hola@agpmobilityscooters.com · +34 613 99 24 17.",
+          "Contact: admin@agpscooterslanzarote.com · +34 613 99 24 17.",
         ],
       },
       {
@@ -662,7 +662,7 @@ const LEGAL_NOTICE: Record<Lang, LegalDoc> = {
           "Inhaber: [HANDELSNAME / FIRMENNAME ERGÄNZEN].",
           "Steuernummer (CIF/NIF): [ERGÄNZEN].",
           "Anschrift: Lanzarote, Kanarische Inseln, Spanien.",
-          "Kontakt: hola@agpmobilityscooters.com · +34 613 99 24 17.",
+          "Kontakt: admin@agpscooterslanzarote.com · +34 613 99 24 17.",
         ],
       },
       {
@@ -717,7 +717,7 @@ const LEGAL_NOTICE: Record<Lang, LegalDoc> = {
           "Titulaire : [COMPLÉTER NOM COMMERCIAL / RAISON SOCIALE].",
           "Numéro fiscal (CIF/NIF) : [À COMPLÉTER].",
           "Adresse : Lanzarote, Îles Canaries, Espagne.",
-          "Contact : hola@agpmobilityscooters.com · +34 613 99 24 17.",
+          "Contact : admin@agpscooterslanzarote.com · +34 613 99 24 17.",
         ],
       },
       {
