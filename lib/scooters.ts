@@ -36,8 +36,8 @@ export const SCOOTERS: Scooter[] = [
     },
     capacity: 1,
     badge: "1-PAX",
-    range_km: 30,
-    max_speed_kmh: 12,
+    range_km: 40,
+    max_speed_kmh: 20,
     max_weight_kg: 150,
     prices: [
       { duration: "1d", price_eur: 20 },
@@ -64,8 +64,8 @@ export const SCOOTERS: Scooter[] = [
     },
     capacity: 2,
     badge: "2-PAX",
-    range_km: 40,
-    max_speed_kmh: 15,
+    range_km: 50,
+    max_speed_kmh: 25,
     max_weight_kg: 220,
     prices: [
       { duration: "1d", price_eur: 50 },
@@ -92,8 +92,8 @@ export const SCOOTERS: Scooter[] = [
     },
     capacity: 2,
     badge: "PREMIUM",
-    range_km: 55,
-    max_speed_kmh: 20,
+    range_km: 50,
+    max_speed_kmh: 25,
     max_weight_kg: 250,
     prices: [
       { duration: "4h", price_eur: 50 },

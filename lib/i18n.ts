@@ -126,7 +126,7 @@ export const DICT: Record<Lang, Dict> = {
     },
     trust: {
       delivery: "Entrega en hotel",
-      range: "Hasta 55 km de autonomía",
+      range: "Hasta 50 km de autonomía",
       payment: "Pago al recibir",
       support: "Asistencia 24/7",
     },
@@ -255,7 +255,7 @@ export const DICT: Record<Lang, Dict> = {
     },
     trust: {
       delivery: "Hotel delivery",
-      range: "Up to 55 km range",
+      range: "Up to 50 km range",
       payment: "Pay on delivery",
       support: "24/7 support",
     },
@@ -384,7 +384,7 @@ export const DICT: Record<Lang, Dict> = {
     },
     trust: {
       delivery: "Lieferung ins Hotel",
-      range: "Bis zu 55 km Reichweite",
+      range: "Bis zu 50 km Reichweite",
       payment: "Zahlung bei Lieferung",
       support: "24/7-Unterstützung",
     },
@@ -513,7 +513,7 @@ export const DICT: Record<Lang, Dict> = {
     },
     trust: {
       delivery: "Livraison à l'hôtel",
-      range: "Jusqu'à 55 km d'autonomie",
+      range: "Jusqu'à 50 km d'autonomie",
       payment: "Paiement à la livraison",
       support: "Assistance 24/7",
     },
